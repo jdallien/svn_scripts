@@ -1,3 +1,4 @@
+# svn_wc2b (working copy to branch)
 trunk_url=`svn info | grep URL | sed 's/URL: //'`
 project_base=`svn info | grep URL | sed 's/URL: //;s/\/trunk.*//'`
 branch_name=my_working_copy

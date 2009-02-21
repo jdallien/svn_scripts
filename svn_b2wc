@@ -1,3 +1,4 @@
+# svn_b2wc (branch to working copy)
 branch_revision=`svn log -q --stop-on-copy | grep '^r[0-9]' | sed 's/^r//;s/ |.*//' | tail -n 1`
 
 if [ -e $branch_revision ] && [ -e $1 ]

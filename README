@@ -1,7 +1,6 @@
 -------------------------------------------------------------
 Some scripts I use to automate subversion tasks.
 Jeff Dallien (jeff@dallien.net)  http://jeff.dallien.net
-The code is released to the public domain.
 -------------------------------------------------------------
 
 svn_wc2b - working copy to branch
