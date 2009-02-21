@@ -1,0 +1,6 @@
+trunk_url=`svn info | grep URL | sed 's/URL: //'`
+project_base=`svn info | grep URL | sed 's/URL: //;s/\/trunk.*//'`
+branch_name=my_working_copy
+
+svn cp $trunk_url $project_base/branches/$branch_name -m "Creating temporary branch for working copy."
+svn switch $project_base/branches/$branch_name
