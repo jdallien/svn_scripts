@@ -3,6 +3,8 @@ Some scripts I use to automate subversion tasks.
 Jeff Dallien (jeff@dallien.net)  http://jeff.dallien.net
 -------------------------------------------------------------
 
+annotate - a quick way to see annotations on a full file, with scrolling.
+
 svn_wc2b - working copy to branch
 svn_b2wc - branch to working copy
 

@@ -1,0 +1,6 @@
+end_date=`date +"%N"`
+file=/tmp/annotate_$end_date.txt
+svn annotate $1 > $file
+less $file
+rm $file
+
