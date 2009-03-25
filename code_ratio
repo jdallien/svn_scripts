@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+# Displays what percentage of lines are attributed to each developer in an
+# svn blame output. Keep in mind that merges, moving files, etc. can mean
+# the developer attributed to many lines may have written none of them.
+#
+# Usage: svn blame <file/group of files> | code_ratio
+
+developer_line_tally = {}
+total_lines          = 0
+
+code = $stdin.read
+annotated_code = code.split("\n")
+
+for line in annotated_code do
+    developer = line.split(" ")[1]
+    if developer_line_tally[developer]
+      developer_line_tally[developer] += 1
+    else
+      developer_line_tally[developer] = 1
+    end 
+    total_lines += 1
+end
+
+def percentage(part, total)
+  percent = (part.to_f / total.to_f) * 100
+  "%3.2f" % percent
+end
+
+sort_array = []
+developer_line_tally.each_pair do |developer, line_count|
+  sort_array << {:name => developer, :lines => line_count}
+end
+
+sort_array.sort!{|a,b| b[:lines] <=> a[:lines]}
+
+puts "Developer\tLoC\t\tPercentage"
+puts "---------\t---\t\t----------"
+sort_array.each do |developer|
+  tabs = developer[:name].length > 6 ? "\t" : "\t\t"
+  puts "#{developer[:name]}:#{tabs}#{developer[:lines]}\t\t" \
+        "#{percentage(developer[:lines], total_lines)}%"
+end
+
+
+

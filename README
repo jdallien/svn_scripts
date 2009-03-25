@@ -3,8 +3,11 @@ Some scripts I use to automate subversion tasks.
 Jeff Dallien (jeff@dallien.net)  http://jeff.dallien.net
 -------------------------------------------------------------
 
-annotate - a quick way to see annotations on a full file, with scrolling.
-
+annotate   - a quick way to see annotations on a full file, with scrolling.
+conflicts  - simple shortcut to seeing which files are currently in a
+             conflicted state.
+code_ratio - Ruby script to show what percentage of lines are attributed to
+             each developer in an 'svn blame' output.
 svn_wc2b - working copy to branch
 svn_b2wc - branch to working copy
 
